@@ -1,0 +1,18 @@
+<h2 
+*ngIf="personnesEmbauche.length > 0"
+>Liste des cvs sélectionnés pour embauche</h2>
+<ol class="list-group">
+    <li
+      *ngFor= "let itemPersonne of personnesEmbauche; let color = odd"
+      class="list-group-item"
+      [ngClass]= "{
+        'list-group-item-info': color,
+        'list-group-item-success': !color
+      }"
+      >
+      <app-item
+      [personne]="itemPersonne"
+      ></app-item>
+    </li>
+  </ol>
+  
